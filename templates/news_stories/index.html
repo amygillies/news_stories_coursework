@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>
+        News - Latest News
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.2/examples/dashboard/dashboard.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="jumbotron p-4">
+            <div class="container">
+                <h1 class="jumbotron-heading">Latest News</h1>
+            </div>
+        </div>
+
+        <main role="main" class="container">
+
+            <div class="container">
+                <div class="row">
+                    {% if latest_story_list %}
+                        <div class="panel-body">
+                            <div class="list-group">
+                                {% for story in latest_story_list %}
+                                <div class="list-group-item">
+                                    <h2 class="list-group-item-heading">
+                                        {{ story.heading }}
+                                    </h2>
+                                    <h4> {{ story.date }} </h4>
+                                    <p>{{ story.text }}</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <p>There are no stories.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <footer>
+                <br />
+                <br />
+                <p>Latest News Stories, By Amy Gillies, Student No: 2254790G.</p>
+            </footer>
+        </main>
+
+    </body>
+</html>
